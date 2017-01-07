@@ -3010,7 +3010,29 @@ a {
   color: #fff;
   text-align: center;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  position: relative;
+  overflow: hidden; }
+  .btn span {
+    position: relative;
+    z-index: 2; }
+  .btn:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #323232;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    transition: all .15s ease-in-out; }
+  .btn:hover:before {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%); }
 
 .section {
   min-height: 100vh; }
