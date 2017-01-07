@@ -71,20 +71,18 @@
             responsive: [{
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow: 5
+                    slidesToShow: 5,
                 }
             }, 
             {
                 breakpoint: 601,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
+                    slidesToShow: 3
                 }
             }, {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToShow: 2
                 }
             }]
         });
