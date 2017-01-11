@@ -2,16 +2,16 @@
 
     $(window).on('load', function(event) {
 
-       var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
-        // console.log('Page load time is '+ loadTime);
+        var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 
-
-        if (loadTime >=2000) {
+        if (loadTime >= 1500) {
             $('.load_bar').find('span').animate({
-                'width': '250px'},
-                loadTime, function() {
-               
-            });
+                    'width': '250px'
+                },
+                loadTime,
+                function() {
+
+                });
 
             setTimeout(function() {
                 $('.loading').css({
@@ -20,34 +20,40 @@
                 });
             }, loadTime);
 
-            
+
 
         } else {
             $('.load_bar').find('span').animate({
-                'width': '250px'},
-                2000, function() {
+                    'width': '250px'
+                },
+                1500,
+                function() {
 
-              
-            });
 
-              setTimeout(function() {
-                    $('.loading').css({
-                        'opacity': '0',
-                        'visibility': 'hidden',
-                        'transform': 'translateY(-100%)'
-                    });
-                }, 2000);
+                });
+
+            setTimeout(function() {
+                $('.loading').css({
+                    'opacity': '0',
+                    'visibility': 'hidden',
+                    'transform': 'translateY(-100%)'
+                });
+            }, 1500);
         }
 
     });
-    
+
+    enableSmoothScroll(.5, 100);
+    smoothScroll(.5, 100);
+
 
     $(document).ready(function() {
+
         setTimeout(function() {
             new WOW().init();
         }, 2000);
-        
-        smoothScroll(300);
+
+        smoothClickScroll(300);
 
         $('.header_icon').on('click', function(event) {
             /* Act on the event */
@@ -91,16 +97,21 @@
                         childskillBar = skillBar.children('span'),
                         numberValue = skillBar.data('value');
 
-                    // childskillBar.css('width', numberValue + '%');
-
                     setTimeout(function(index) {
                         childskillBar.animate({ width: numberValue + '%' }, 500);
                     }, 150 * (index + 1))
                 });
             }
 
-            closeHeader();
+            $('.works .work').each(function(index, el) {
+                var $this = $(this);
 
+                $this.find('.letter').css({
+                    transform: 'translateY(' + -x + 'px)'
+                });
+            });
+
+            closeHeader();
         });
 
 
@@ -108,7 +119,7 @@
             infinite: true,
             arrows: false,
             autoplay: true,
-            speed: 300,
+            speed: 150,
             slidesToShow: 7,
             slidesToScroll: 1,
             responsive: [{
@@ -116,8 +127,7 @@
                 settings: {
                     slidesToShow: 5,
                 }
-            }, 
-            {
+            }, {
                 breakpoint: 601,
                 settings: {
                     slidesToShow: 3
@@ -145,21 +155,52 @@
     }
 
 
-    function smoothScroll(duration) {
+    function smoothClickScroll(duration) {
         $('a[href^="#"]').on('click', function(event) {
 
-            var target = $($(this).attr('href'));
+            var $this =  $(this);
+                target = $($this.attr('href')),
+                heightHeader =  $('.header').height();
 
-            if (target.length) {
+             if (target.length) {
                 event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, duration);
+                 $('html, body').animate({
+                        scrollTop: target.offset().top - heightHeader
+                    }, duration);
             }
+
+            closeHeader();
         });
     }
 
 
+    function smoothScroll(time, distance) {
 
+        var $window = $(window);
+        var scrollTime = time;
+        var scrollDistance = distance;
+
+        $window.on("mousewheel.smooth DOMMouseScroll.smooth", function(event) {
+
+            event.preventDefault();
+            var delta = event.originalEvent.wheelDelta / 80 || -event.originalEvent.detail / 3;
+            var scrollTop = $window.scrollTop();
+            var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+
+            TweenMax.to($window, scrollTime, {
+                scrollTo: { y: finalScroll, autoKill: true },
+                ease: Power1.easeOut,
+                overwrite: 5
+            });
+
+        });
+
+    }
+
+    function enableSmoothScroll (time, distance) {
+          
+        $(window).on('mousewheel.smooth DOMMouseScroll.smooth', smoothScroll(time,distance));
+      
+    }
 
 })(jQuery);
