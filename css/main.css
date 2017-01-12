@@ -2915,7 +2915,9 @@ template {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  position: relative;
+  z-index: 10; }
 
 .row {
   margin-left: -15px;
@@ -3262,10 +3264,12 @@ a {
     .header_icon.toggle span:first-child {
       opacity: 0; }
 
+.wrap_home {
+  background: url(../img/bg.jpg) no-repeat top center;
+  background-size: 100%; }
+
 .banner {
-  min-height: 125vh;
-  background: url(../img/bg.jpg) no-repeat;
-  background-size: cover; }
+  min-height: 100vh; }
   .banner .container {
     position: relative; }
   .banner .text {
@@ -3449,7 +3453,6 @@ a {
     box-shadow: 0 0 40px rgba(54, 67, 77, 0.2);
     background-size: cover;
     background-position: top center;
-    transition: all 0.3s cubic-bezier(0, 0, 0.1, 1.48);
     position: relative; }
     .work .mockup span {
       display: block;
@@ -3465,9 +3468,10 @@ a {
       padding-top: 100%; }
   .work:hover .mockup {
     box-shadow: 0 20px 50px rgba(54, 67, 77, 0.5);
-    -webkit-transform: translate(0, -50px);
-    -ms-transform: translate(0, -50px);
-    transform: translate(0, -50px); }
+    -webkit-transform: translate(0, -50px) !important;
+    -ms-transform: translate(0, -50px) !important;
+    transform: translate(0, -50px) !important;
+    transition: all 0.3s cubic-bezier(0, 0, 0.1, 1.48); }
     .work:hover .mockup span {
       opacity: 1; }
   .work .namWork {
@@ -3487,7 +3491,7 @@ a {
       margin: 20px 0 0; }
   .work .letter {
     right: -50%;
-    bottom: -2500px;
+    bottom: -100px;
     line-height: 1;
     text-transform: uppercase;
     font-size: 500px;
@@ -3503,18 +3507,6 @@ a {
 .works > div:nth-child(2n) .namWork {
   left: inherit;
   right: -150px; }
-
-.works > .work:nth-child(2) .letter {
-  bottom: -3150px; }
-
-.works > .work:nth-child(3) .letter {
-  bottom: -3750px; }
-
-.works > .work:nth-child(4) .letter {
-  bottom: -4500px; }
-
-.works > .work:nth-child(5) .letter {
-  bottom: -5150px; }
 
 .allWorks {
   background: #f4f4f4;
@@ -3738,6 +3730,10 @@ a {
   .visible-xs {
     display: none; } }
 
+@media (max-width: 1199px) {
+  .work {
+    width: 50%; } }
+
 @media (max-width: 991px) {
   .line ul li {
     width: 20%; }
@@ -3783,7 +3779,7 @@ a {
     overflow: hidden; }
   .work {
     width: 100%;
-    max-width: 250px; }
+    max-width: 300px; }
     .work .letter {
       font-size: 300px;
       right: -30%; }
@@ -3793,17 +3789,7 @@ a {
   .works > div:nth-child(2n) .letter {
     left: -30%; }
   .works > div:nth-child(2n) .namWork {
-    right: -50px; }
-  .works > .work:nth-child(1) .letter {
-    bottom: -2800px; }
-  .works > .work:nth-child(2) .letter {
-    bottom: -3200px; }
-  .works > .work:nth-child(3) .letter {
-    bottom: -3750px; }
-  .works > .work:nth-child(4) .letter {
-    bottom: -4250px; }
-  .works > .work:nth-child(5) .letter {
-    bottom: -4600px; } }
+    right: -50px; } }
 
 @media (max-width: 600px) {
   .line ul li {
@@ -3818,5 +3804,17 @@ a {
       display: none; }
   .header_top ul li {
     padding: 15px 25px; } }
+
+@media (max-width: 400px) {
+  .work .letter {
+    font-size: 250px;
+    right: -30px; }
+  .work .namWork {
+    left: -20px;
+    font-size: 25px; }
+  .works > div:nth-child(2n) .letter {
+    left: -30px; }
+  .works > div:nth-child(2n) .namWork {
+    right: -20px; } }
 
 /*# sourceMappingURL=main.css.map */

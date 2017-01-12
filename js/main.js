@@ -48,7 +48,8 @@
 
 
     $(document).ready(function() {
-
+        var  $vH = $(window).outerHeight();
+        
         setTimeout(function() {
             new WOW().init();
         }, 2000);
@@ -81,14 +82,40 @@
         });
 
 
+        $('.works > .work').each(function(index, el) {
+            var $this = $(this),
+                $h = ($this.find('.mockup').outerHeight())/2;
+
+            $(window).scroll(function() {
+                var  x = $(window).scrollTop();
+
+                $('.works .work').each(function(index, el) {
+                    var $this = $(this),
+                        $top = $this.offset().top,
+                        y = (x-$top + $h)/$vH;
+
+                    $this.find('.letter').css({
+                        transform: 'translateY(' + (1-(x-$top)-100) + 'px) scale('+ (1-y/2) +')' 
+                    }); 
+  
+
+                    $this.find('.mockup').css({
+                        transform: 'scale('+ (1-y/3) +')'
+                    });
+                });
+            });
+        });
+
+
 
         $(window).scroll(function() {
-            var x = $(window).scrollTop();
+            var x = $(window).scrollTop(),
+                $topAbout  =  $('.about_inner').offset().top,
+                $h = ($('.about_inner').outerHeight()/2),
+                y = (x-$topAbout)/$vH;
 
             $('.text_1').css('margin-top', -x / 10 + '%');
             $('.text_2').css('margin-top', -x / 12 + '%');
-
-            $('.banner_intro').css('margin-top', -x / 1000 + '%');
 
             if (x > $('.about ').offset().top) {
                 $('.about_skill ul li').each(function(index, el) {
@@ -103,14 +130,7 @@
                 });
             }
 
-            $('.works .work').each(function(index, el) {
-                var $this = $(this);
-
-                $this.find('.letter').css({
-                    transform: 'translateY(' + -x + 'px)'
-                });
-            });
-
+            
             closeHeader();
         });
 
