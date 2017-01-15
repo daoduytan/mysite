@@ -3510,7 +3510,6 @@ a {
 
 .allWorks {
   background: #f4f4f4;
-  display: none;
   padding: 0 15px; }
   .allWorks .slick-list {
     overflow: inherit; }
