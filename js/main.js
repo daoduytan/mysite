@@ -1,7 +1,7 @@
 $(window).on('load', function(event) {
     var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 
-    if (loadTime >= 1500) {
+    if (loadTime >= 500) {
 
         LoadBar(loadTime)
 
@@ -13,7 +13,7 @@ $(window).on('load', function(event) {
         }, loadTime);
 
     } else {
-        LoadBar(1500)
+        LoadBar(500)
 
         setTimeout(function() {
             $('.loading').css({
@@ -21,7 +21,7 @@ $(window).on('load', function(event) {
                 'visibility': 'hidden',
                 'transform': 'translateY(-100%)'
             });
-        }, 1500);
+        }, 500);
     }
 
     function LoadBar(time) {
@@ -50,7 +50,7 @@ $(window).on('load', function(event) {
 
         setTimeout(function() {
             new WOW().init();
-        }, 2000);
+        }, 600);
 
         smoothClickScroll(300);
 
@@ -133,29 +133,51 @@ $(window).on('load', function(event) {
         });
 
 
-        $('.allWorks_slider').slick({
-            infinite: true,
-            arrows: false,
+        // $('.allWorks_slider').slick({
+        //     infinite: true,
+        //     arrows: false,
+        //     autoplay: true,
+        //     speed: 150,
+        //     slidesToShow: 7,
+        //     slidesToScroll: 1,
+        //     responsive: [{
+        //         breakpoint: 1000,
+        //         settings: {
+        //             slidesToShow: 5,
+        //         }
+        //     }, {
+        //         breakpoint: 601,
+        //         settings: {
+        //             slidesToShow: 3
+        //         }
+        //     }, {
+        //         breakpoint: 480,
+        //         settings: {
+        //             slidesToShow: 2
+        //         }
+        //     }]
+        // });
+
+        $('.allWorks_slider').owlCarousel({
+            loop:true,
             autoplay: true,
-            speed: 150,
-            slidesToShow: 7,
-            slidesToScroll: 1,
-            responsive: [{
-                breakpoint: 1000,
-                settings: {
-                    slidesToShow: 5,
+            autoplayHoverPause: true,
+            // nav:true,
+            margin:0,
+            responsive:{
+                0:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },            
+                601:{
+                    items:5
+                },
+                1001:{
+                    items:7
                 }
-            }, {
-                breakpoint: 601,
-                settings: {
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2
-                }
-            }]
+            }
         });
 
 
