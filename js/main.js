@@ -52,7 +52,7 @@ $(window).on('load', function(event) {
             new WOW().init();
         }, 600);
 
-        smoothClickScroll(300);
+        smoothClickScroll(500);
 
         $('.header_icon').on('click', function(event) {
             /* Act on the event */
@@ -132,32 +132,6 @@ $(window).on('load', function(event) {
             closeHeader();
         });
 
-
-        // $('.allWorks_slider').slick({
-        //     infinite: true,
-        //     arrows: false,
-        //     autoplay: true,
-        //     speed: 150,
-        //     slidesToShow: 7,
-        //     slidesToScroll: 1,
-        //     responsive: [{
-        //         breakpoint: 1000,
-        //         settings: {
-        //             slidesToShow: 5,
-        //         }
-        //     }, {
-        //         breakpoint: 601,
-        //         settings: {
-        //             slidesToShow: 3
-        //         }
-        //     }, {
-        //         breakpoint: 480,
-        //         settings: {
-        //             slidesToShow: 2
-        //         }
-        //     }]
-        // });
-
         $('.allWorks_slider').owlCarousel({
             loop:true,
             autoplay: true,
@@ -199,7 +173,7 @@ $(window).on('load', function(event) {
         $('a[href^="#"]').on('click', function(event) {
 
             var $this = $(this);
-            target = $($this.attr('href')),
+                target = $($this.attr('href')),
                 heightHeader = $('.header').height();
 
             if (target.length) {
@@ -208,6 +182,8 @@ $(window).on('load', function(event) {
                     scrollTop: target.offset().top - heightHeader
                 }, duration);
             }
+
+
 
             closeHeader();
         });
