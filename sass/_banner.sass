@@ -1,0 +1,452 @@
+.wrap_home 
+    background: url(../img/bg.jpg) no-repeat top center
+    background:
+        size: 100%
+.banner 
+    min-height: 100vh
+    // background: url(../img/bg.jpg) no-repeat 
+    // background:
+    //     size: cover
+
+    .container
+        position: relative
+
+    .text 
+        position: absolute
+        top: 120px
+        font:
+            size: 250px
+            weight: 800
+        text-transform: uppercase
+        transform: rotate(90deg)
+        line-height: 1
+        opacity: .95
+        // transition: margin .1s ease
+
+        span 
+            display: inline-block
+
+        &_1 
+            left: 200px
+            top: 250px
+
+        &_2 
+            left: -100px
+
+.avatar 
+    display: block 
+    +size(100px 100px)
+    margin: auto
+    border-radius: 50%
+    background: #fff
+    box-shadow: 0px 16px 20px 0px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase
+    font:
+        weight: 800
+        size: 30px
+    position: relative
+
+    &:before, &:after
+        content: ""
+        display: block
+        +position(absolute, 50% null null 50%)
+        transform: translate(-50%, -50%)
+
+    &:before
+        +size(92% 92%)
+        z-index: 1
+        border-radius: 50%
+        border: 1px solid $color_1
+
+
+    span 
+        +position(absolute, 50% null null 50%)
+        z-index: 5
+        transform: translate(-50%, -50%)
+        color: $color_1
+
+.banner_intro
+    text-align: center
+
+    .avatar
+        margin: 100px auto 50px
+        +size(200px 200px)
+        span 
+            font:
+                weight: 800
+                size: 70px
+    p 
+        font-size: 18px
+        line-height: 35px
+
+    ul 
+        list-style: none 
+        padding: 0 
+
+        li 
+            display: inline-block
+
+            a 
+                color: #212121
+                font-size: 25px
+
+
+.about
+    
+    &_inner
+        width: 80%
+        padding: 50px 30px
+        margin: auto
+        background: #fff url(../img/bgAbout.jpg) no-repeat top left
+        background:
+            size: cover
+            attachment: fixed
+        // box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.2)
+        box-shadow: 0px 20px 50px 0px rgba(54, 67, 77, 0.2);
+        position: relative
+        
+        .cirle
+            content: ""
+            display: block 
+            +size(14px 14px)
+            background: $color_1
+            border-radius: 50%
+            +position(absolute, -10px -10px null null)
+
+            &:after, &:before 
+                content: ""
+                background: $color_1
+                display: block
+                +size(30px 30px)
+                border-radius: 100%
+                -webkit-animation-fill-mode: both
+                animation-fill-mode: both
+                +position(absolute, 50% 50% null null)
+                margin:
+                    right: -15px
+                    top: -15px
+                opacity: 0
+
+            &:before 
+                -webkit-animation: jumper 1.8s .33333s ease-out infinite
+                animation: jumper 1.8s .33333s ease-out infinite
+
+            &:after 
+                -webkit-animation: jumper 1.8s .66666s ease-out infinite
+                animation: jumper 1.8s .66666s ease-out infinite
+
+    
+    &_left
+        padding-left: 100px 
+        font-weight: 600
+        h4 
+            text-transform: uppercase
+            font:
+                size: 25px
+                weight: 700
+            margin: 100px 0 10px
+
+    &_right 
+        h4 
+            margin: 0 0 15px
+            position: relative
+
+            &:before 
+                content: ""
+                display: block 
+                border: 5px solid
+                border-color: transparent transparent transparent #000
+                +position(absolute, 50% null null -20px)
+                margin-top: -5px
+
+    &_skill 
+        ul 
+            list-style: none
+            padding: 0
+            // margin: 0
+            li 
+                margin-bottom: 30px
+        h5 
+            font-size: 14px
+            font-weight: 300
+            text-transform: uppercase
+            margin: 0 0 15px
+
+        .skill_bar
+            background: rgb(214, 210, 209)
+
+            span 
+                display: block
+                background: rgb(0, 198, 115)
+                +size(0px 7px)
+
+    &_company
+        .img 
+            margin-top: 15px
+            img 
+                display: block
+                max-width: 100%
+
+    .btn 
+        margin-top: 100px
+        // margin-left: 85px
+
+.works_recent
+    overflow: hidden
+
+    .section_title 
+        margin: 0 0 100px
+
+.work
+    width: 40%
+    margin: 200px auto
+    position: relative
+
+    .mockup 
+        width: 100%
+        box-shadow: 0 0 40px rgba(54,67,77,0.2)
+        background-size: cover
+        background-position: top center
+        transition: all .3s cubic-bezier(0, 0, 0.1, 1.48)
+        position: relative
+
+        span 
+            display: block
+            +size(100% 100%)
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+
+
+        &:after 
+            content: ""
+            display: block 
+            padding-top: 100%
+
+
+    &:hover 
+        .mockup 
+            box-shadow: 0 20px 50px rgba(54,67,77,0.5)
+            transform: translate(0, -50px)!important
+            transition: all .3s cubic-bezier(0, 0, 0.1, 1.48)
+
+            span 
+                opacity: 1
+    
+    .namWork 
+        font-weight: 700
+        text-transform: uppercase
+        font-size: 35px
+        position: absolute
+        left: -150px
+        top: 0
+        color: $color_2
+
+        &:after 
+            content: ""
+            display: block
+            height: 5px
+            width: 30px
+            background: #00C673
+            margin: 20px 0 0
+
+    .letter 
+        right: -50%
+        bottom: -100px
+        
+        line-height: 1
+        text-shadow: 0px 20px 30px rgba(0,0,0,.2)
+        transform-origin: center left !important
+        text-transform: uppercase
+        font-size: 500px
+        position: absolute
+        font-weight: 700
+        z-index: 1
+        display: inline-block
+       
+
+.works > div:nth-child(2n) 
+    .letter 
+        right: inherit
+        left: -50%
+        transform-origin: center right !important
+        
+
+    .namWork 
+        left: inherit
+        right: -150px
+
+
+// .works > .work:nth-child(1)
+//         .letter 
+//             bottom: -2500px
+// .works > .work:nth-child(2)
+//         .letter 
+//             bottom: -3150px
+
+// .works > .work:nth-child(3)
+//         .letter 
+//             bottom: -3750px
+
+// .works > .work:nth-child(4)
+//         .letter 
+//             bottom: -4500px
+
+// .works > .work:nth-child(5)
+//         .letter 
+//             bottom: -5150px
+
+.allWorks 
+    background: #f4f4f4
+    padding: 0 15px
+
+    .slick-arrow 
+        position: absolute
+        top: 50%
+        z-index: 999
+
+    .slick-list
+        overflow: inherit
+
+    .slick-next
+        right: 0
+
+    .work-item
+        background-size: cover
+        overflow: hidden
+
+        a 
+            display: block
+            height: 500px
+            position: relative
+
+        .color 
+            +position(absolute, null 0 0 0)
+            min-height: 0
+            transition: all .5s ease-in-out
+
+
+        span 
+            display: inline-block
+            width: 100px
+            font:
+                size: 20px
+                weight: 800
+            color: #000
+            text-transform: uppercase
+            transform: rotate(-90deg)
+            position: absolute
+            transition: all .5s ease-in-out
+            bottom: 0
+            opacity: 0
+            z-index: 10
+
+        strong
+            display: inline-block
+            font:
+                size: 300px
+                weight: 800
+            text-transform: uppercase
+            transform: translateY(-100px)
+            transition: all .3s ease-in-out
+
+        &.slick-active 
+            .color 
+                min-height: 100%
+
+            span 
+                opacity: 1
+                bottom: 100px
+
+            strong 
+                transform: translateY(0px)
+
+            &:hover 
+                strong 
+                    text-shadow: 0px 20px 30px rgba(0,0,0,.3)
+                    transform: translateY(-30px)
+
+                span 
+                    text-shadow: 0px 10px 20px rgba(0,0,0,.3)
+                    transform: translateY(-30px)
+
+// contact 
+.contact
+    &_top 
+        height: 100px
+        background: #06a862
+        position: relative
+
+    .avatar 
+        transform: translateY(50px)
+
+    .btnBack 
+        display: block
+        +size(30px 30px)
+        position: absolute
+        top: 50%
+        left: 50px
+        cursor: pointer
+        margin-top: -15px
+
+        span 
+            display: block
+            +size(30px 2px)
+            background: #fff
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+
+
+            &::before, &::after 
+                content: ""
+                display: inline-block
+                background: #fff
+                +size(12px 2px)
+                +position(absolute, -0.5px null null 0)
+                transform-origin: 0 0
+                transition: all .5s ease-in-out .5s
+
+
+            &::before 
+                width: 14px
+
+    &_main 
+        padding-top: 100px
+        .add 
+            ul 
+                list-style: none
+                padding: 0
+                text-align: center
+                li 
+                    
+                    color: #fff
+                    margin: 0 15px 20px
+
+                    span 
+                        display: block
+                        font-size: 30px
+                        margin: 0 0 10px
+
+                    a 
+                        color: #fff 
+                        font:
+                            weight: 700
+                        transform: translateY(-5px)
+                        display: inline-block
+
+
+
+.showContact .btnBack span::before 
+    transform: rotate(45deg)
+
+
+.showContact .btnBack span::after 
+    transform: rotate(-45deg)
+
+       
+        
+
+
+

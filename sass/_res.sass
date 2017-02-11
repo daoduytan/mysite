@@ -1,0 +1,156 @@
+@media (min-width: 768px) 
+	.visible-xs 
+		display: none
+
+@media (max-width: 1199px)
+	.work
+		width: 50%
+@media (max-width: 991px) 
+	.line 
+		ul li
+			width: 20%
+			&:nth-child(n+6)
+				display: none
+
+@media (max-width: 767px) 
+	.hidden-xs
+		display: none
+	.line 
+		ul li
+			width: 25%
+			&:nth-child(n+5)
+				display: none
+
+	.contact .btnBack
+		left: 15px
+	// banner 
+
+	.banner
+		.text
+			font-size: 180px
+
+		.text_1 
+			left: inherit
+			right: -100px
+			top: 550px
+
+		.text_2
+			left: -120px
+
+		&_intro 
+			.avatar
+				+size(150px 150px)
+
+			p 
+				display: none
+
+		&_intro 
+			.avatar span
+				font-size: 50px
+
+	// about
+	.about
+		.col-6 
+			width: 100%
+		&_inner
+			width: 100%
+
+		&_left 
+			padding-left: 15px
+			padding-bottom: 30px
+
+		.btn 
+			display: block
+			max-width: 150px
+			margin: 50px auto 0
+
+
+	// work 
+	.wrap
+		overflow: hidden
+
+	.work 
+		
+		width: 100%
+		max-width: 300px
+
+		.letter
+			font-size: 300px
+			right: -30%
+
+		.namWork
+			left: -50px
+			font-size: 25px
+
+	.works
+		>div:nth-child(2n) 
+			.letter 
+				left: -30%		
+
+			.namWork
+				right: -50px
+
+	// .works > .work:nth-child(1)
+ //        .letter 
+ //            bottom: -2800px
+	
+	// .works > .work:nth-child(2)
+ //        .letter 
+ //            bottom: -3200px
+
+	// .works > .work:nth-child(3)
+	//         .letter 
+	//             bottom: -3750px
+
+	// .works > .work:nth-child(4)
+	//         .letter 
+	//             bottom: -4250px
+
+	// .works > .work:nth-child(5)
+	//         .letter 
+	//             bottom: -4600px
+
+
+@media (max-width: 600px) 
+	.line 
+		ul li
+			width: 33.333%
+			&:nth-child(n+4)
+				display: none
+
+
+@media (max-width: 480px) 
+	.line 
+		ul li
+			width: 50%
+			&:nth-child(n+3)
+				display: none
+
+	.header_top ul li
+		padding: 15px 25px
+
+
+@media (max-width: 400px) 
+	.work 
+		.letter
+			font-size: 250px
+			right: -30px
+
+		.namWork
+			left: -20px
+			font-size: 25px
+
+	.works
+		>div:nth-child(2n) 
+			.letter 
+				left: -30px		
+
+			.namWork
+				right: -20px
+
+
+@media (min-height: 900px) 
+	.wrap_text 
+		margin-top: 10%;
+		position: relative
+	

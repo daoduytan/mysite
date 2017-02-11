@@ -1,0 +1,255 @@
+// color:  
+$color-1: #06a862
+$color-2: #323232
+$color-3: #19e085
+
+// grid 
+.container 
+    width: 100%
+    max-width: 1170px
+    margin:
+        left: auto
+        right: auto
+    
+    padding:
+        left: 15px
+        right: 15px
+    position: relative
+    z-index: 10
+
+.row 
+    margin:
+        left: -15px
+        right: -15px
+    &:after, &:before 
+        content: "" 
+        clear: both 
+        display: table
+
+.col 
+    padding:
+        left: 15px
+        right: 15px
+    float: left
+    min-height: 1px
+
+    &-6 
+        width: 50%
+
+
+.line 
+    position: fixed
+    z-index: 0
+    top: 0
+    left: 15px
+    right: 15px
+    bottom: 0
+
+
+    ul 
+        border-right: 1px solid #f5f5f5
+        list-style: none
+        padding: 0
+        margin: 0
+        +size(100% 100%)
+        li 
+            +size(14.2857% 100%)
+            border-left: 1px solid #f5f5f5
+            float: left
+            // background: rgba(#ddd, .3)
+
+            &:nth-child(2n)
+                background: rgba(#fff, .1)
+
+.wrap 
+    overflow-x: hidden
+    &_inner 
+        width: 200%
+        -webkit-transition: all .5s ease
+        transition: all .5s ease
+
+        &.showContact
+            transform: translate(-48%, 0)
+
+            .wrap_home
+                overflow: hidden
+                height: 100vh
+
+
+    &_home, &_contact 
+        float: left 
+
+    &_home
+        width: 50%
+
+    &_contact 
+        background: #19e085
+        width: 48%
+        position: relative
+        z-index: 100
+        min-height: 100vh
+
+
+// setting 
+* 
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+body 
+    font:
+        family: 'Open Sans', sans-serif
+        size: 16px
+    line-height: 1.5
+    letter-spacing: 1px
+    
+
+a 
+    text-decoration: none
+
+.cf 
+    &:after, &:before 
+        content: "" 
+        clear: both 
+        display: table
+
+.text 
+    &-center 
+        text-align: center 
+
+.btn 
+    display: inline-block 
+    height: 50px
+    min-width: 150px;
+    line-height: 50px
+    background: $color-1
+    color: #fff
+    text-align: center
+    padding:
+        left: 15px
+        right: 15px
+    position: relative
+    overflow: hidden
+    font:
+        size: 14px
+
+    span 
+        position: relative
+        z-index: 2
+
+    &:before 
+        content: ""
+        display: block
+        +size(100% 100%)
+        +position(absolute, 0 null null 0)
+        background: $color_2
+        transform: translateX(-100%)
+        transition: all .15s ease-in-out
+    &:hover 
+        &:before
+            transform: translateX(0%)
+
+
+.section
+    min-height: 100vh
+
+    &_title 
+        h3 
+            display: block
+            text-transform: uppercase
+            margin: 0 0 30px
+            font:
+                weight: 300
+                size: 35px
+
+        &:after 
+            content: ""
+            display: inline-block 
+            // +size(40px 5px)
+            +size(16px 16px)
+            background: url(../img/icon.png) no-repeat 50% 50%
+
+.down 
+    padding: 100px 0
+    position: relative
+    z-index: 10
+    img 
+        display: block 
+        max-width: 100%
+        margin: auto    
+
+// animation
+@-webkit-keyframes rotate 
+    0% 
+        -webkit-transform: rotate(0)
+        transform: rotate(0)
+
+    100% 
+        -moz-transform: rotate(0)
+        transform: rotate(360deg)
+
+@-moz-keyframes rotate 
+    0% 
+        -moz-transform: rotate(0)
+        transform: rotate(0)
+
+    100% 
+        -moz-transform: rotate(360deg)  
+        transform: rotate(360deg)  
+
+@keyframes rotate 
+    0% 
+        transform: rotate(0)
+
+    100% 
+        transform: rotate(360deg)  
+
+/*jumper*/
+@-webkit-keyframes jumper 
+    0% 
+        opacity: 0
+        -webkit-transform: scale(0)
+        transform : scale(0)
+
+    5% 
+        opacity: 1
+
+    100% 
+        opacity: 0
+        -webkit-transform: scale(1)
+        transform : scale(1)
+    
+
+
+@-moz-keyframes jumper 
+    0% 
+        opacity: 0
+        -moz-transform: scale(0)
+        transform : scale(0)
+
+    5% 
+        opacity: 1
+
+
+    100% 
+        opacity: 0
+        -moz-transform: scale(1)
+        transform : scale(1)
+
+
+@keyframes jumper 
+    0% 
+        opacity: 0
+        -webkit-transform: scale(0)
+        transform : scale(0)
+
+    5% 
+        opacity: 1
+
+
+    100% 
+        opacity: 0
+        -webkit-transform: scale(1)
+        transform : scale(1)
+
+

@@ -1,0 +1,336 @@
+doctype html
+html(lang='en')
+    head
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        title Dao Duy Tan
+        link(href="css/main.css", rel="stylesheet")
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        script(src="js/modernizr-2.8.3.min.js")
+    
+    body
+        .loading
+            .line 
+                ul
+                    li
+                    li
+                    li 
+                    li
+                    li
+                    li 
+                    li
+            .load
+                .avatar
+                    span Tan
+                .load_bar
+                    span
+        .wrap
+            audio(id="menuSound", controls="" ,hidden="hidden" )
+                <source src="sound/menu.mp3" type="audio/mpeg">
+            
+            .wrap_inner
+                .wrap_home
+                    .line 
+                        ul
+                            li
+                            li
+                            li 
+                            li
+                            li
+                            li 
+                            li
+                    header.header 
+                        .header_top
+                            .container 
+                                .avatar
+                                    span Tan
+                                nav.nav 
+                                    ul 
+                                        li: a(href="#top", title="title") Home
+                                        li: a(href="#about", title="title") About
+                                        li: a(href="#works", title="title") Works
+                                        
+                    // end header
+                    #top
+                    .banner
+                        .header_bar
+                            .container 
+                                .cf
+                                    .header_icon 
+                                        span
+                                        span
+                                        span
+                                    .header_btn
+                                        a(href="#", title="title").btn 
+                                            span Contact me! 
+
+                        .container 
+                            .row
+                                .wrap_text.col-6.col
+                                    .text.text_1
+                                        span  Tan
+                                    .text.text_2
+                                        span 20<span style="color: #06a862">17</span>
+
+                                .banner_intro.col-6.col
+                                    .avatar.wow.bounceInUp
+                                        .img 
+                                            span Tan
+                                    p Hello nice people !<br> Wellcome on my portfolio, I hope you will enjoy, cheers!
+
+                                    ul 
+                                        li: a(href="mailto:daoduytan2212@gmail.com") 
+                                            span.icon-mail 
+                                        li: a(href="skype:daoduytan2212?chat") 
+                                            span.icon-skype  
+                                        li: a(href="tel:+84969 811 549") 
+                                            span.icon-phone  
+
+                    .down.wow.slideInUp
+                        img(src="img/btn-scroll-arrow.svg", alt="")
+                
+                    
+                    .section.about#about
+                        .container 
+                            .about_inner.wow.slideInUp
+                                .cirle
+                                .row 
+                                    .col.col-6.about_left
+                                        .section_title
+                                            h3 About
+                                        
+                                        h4 Dao Duy Tan
+                                        span 22 - 12 - 1990
+
+                                        .hidden-xs
+                                            a(href="#", title="title").btn 
+                                                span My CV 
+                                        
+                                        
+                                        
+                                    .col.col-6.about_right
+                                        .about_intro 
+                                        
+                                            h4 Intro
+
+                                            p Hi. I'm Tan, is a front-end developer.
+                                            p I'm living in Ho Chi Minh City. I am very interested in the program and the nice website so I chose the Front-end. With Front-end, you will be a "painter" really, you creative freedom to create the "painting" with html, css, javascript.
+                                            p  It is interesting. 
+
+                                        .about_skill
+                                            h4 Skill
+
+                                            ul
+                                                li 
+                                                    h5 SOFTWARE DESIGN (PS + AI)
+
+                                                    .skill_bar(data-value="60")
+                                                        span
+                                                li  
+                                                    h5 HTML - CSS
+                                                    .skill_bar(data-value="90")
+                                                        span
+                                                li 
+                                                    h5 JAVASCRIPT
+                                                    .skill_bar(data-value="70")
+                                                        span
+                                                li 
+                                                    h5 UI - UX
+                                                    .skill_bar(data-value="50")
+                                                        span
+                                        .about_company
+                                            h4 Company
+
+                                            .img
+                                                img(src="img/company.png", alt="")
+
+                                div(class="visible-xs")
+                                    a(href="#", title="title").btn 
+                                        span My CV 
+                    // end intro 
+
+                    .down.wow.slideInUp
+                        img(src="img/btn-scroll-arrow.svg", alt="")
+
+                    .section.works_recent#works
+                        .container 
+                            .section_title.text-center
+                                h3 Recent works<br>
+
+
+                            .works 
+                                .work
+                                    a(href="http://32dentalstudio.com", target="_blank")
+                                        .mockup(style="background-image:url(img/works/32.jpg")
+                                            span(style="background: rgba(104, 14, 52, 0.2)")
+                                        h3.namWork.wow.slideInLeft 32dentalstudio
+                                        span.letter(style="color: rgba(104, 14, 52, 0.9)") 3
+
+                                .work
+                                    a(href="https://boligsurf.dk", target="_blank")
+                                        .mockup(style="background-image:url(img/works/bo.jpg")
+                                            span(style="background: rgba(32, 141, 99, 0.2)")
+                                        h3.namWork.wow.slideInLeft BOLIGSURF
+                                        span.letter(style="color: rgba(32, 141, 99, 0.9)") b
+
+                                .work
+                                    a(href="http://geo.sa", target="_blank")
+                                        .mockup(style="background-image:url(img/works/geo.jpg")
+                                            span(style="background: rgba(245, 86, 31, 0.2)")
+                                        h3.namWork.wow.slideInLeft geo.sa
+                                        span.letter(style="color: rgba(245, 86, 31, 0.9)") g
+
+                                .work
+                                    a(href="https://huydong.com", target="_blank")
+                                        .mockup(style="background-image:url(img/works/huydong.jpg")
+                                            span(style="background: rgba(39, 146, 111, 0.2)")
+                                        h3.namWork.wow.slideInLeft huydong.com
+                                        span.letter(style="color: rgba(39, 146, 111, 0.9)") h
+                                .work
+                                    a(href="http://thelifepill.org", target="_blank")
+                                        .mockup(style="background-image:url(img/works/life.jpg")
+                                            span(style="background: rgba(219, 10, 22, 0.2)")
+                                        h3.namWork.wow.slideInLeft life for life
+                                        span.letter(style="color: rgba(219, 10, 22, 0.9)") l
+
+
+                        .text-center(style="margin-bottom: 200px")
+                            a(href="#allWorks").btn 
+                                span View more 
+                        
+
+                        .allWorks#allWorks
+                            .allWorks_slider
+                                .work-item(style="background-image:url(img/works/lnt.jpg")
+                                    a(href="http://lntpartners.com", target="_blank")
+                                        span lntpartners.com
+                                        .color(style="background: rgba(174, 35, 40, .2)")
+                                        strong(style="color: rgba(174, 35, 40, .9)") l
+                                .work-item(style="background-image:url(img/works/tpauk.jpg")
+                                    a(href="http://www.tpauk.com", target="_blank")
+                                        span tpauk.com
+                                        .color(style="background: rgba(0, 103, 102, .2)")
+                                        strong(style="color: rgba(0, 103, 102, .9)") t
+                                .work-item(style="background-image:url(img/works/sanskriti.jpg")
+                                    a(href="http://sanskritiarts.ca/", target="_blank")
+                                        span sanskritiarts.ca
+                                        .color(style="background: rgba(235, 3, 41, .2)")
+                                        strong(style="color: rgba(235, 3, 41, .9)") s
+
+                                .work-item(style="background-image:url(img/works/bo.jpg")
+                                    a(href="https://boligsurf.dk", target="_blank")
+                                        span BOLIGSURF
+                                        .color(style="background: rgba(32, 141, 99, .2)")
+                                        strong(style="color: rgba(32, 141, 99, .9)") b
+
+                                .work-item(style="background-image:url(img/works/life.jpg")
+                                    a(href="http://thelifepill.org", target="_blank")
+                                        span lifepilllaboratories
+                                        .color(style="background: rgba(219, 10, 22, .2)")
+                                        strong(style="color: rgba(219, 10, 22, .9)") l
+
+                                .work-item(style="background-image:url(img/works/32.jpg")
+                                    a(href="http://32dentalstudio.com", target="_blank")
+                                        span 32dentalstudio
+                                        .color(style="background: rgba(104, 14, 52, .2)")
+                                        strong(style="color: rgba(104, 14, 52, .9)") 3
+                                
+                                .work-item(style="background-image:url(img/works/nafas.jpg")
+                                    a(href="http://nafas.org.uk", target="_blank")
+                                        span nafas.org.uk
+                                        .color(style="background: rgba(194, 211, 108, .2)")
+                                        strong(style="color: rgba(194, 211, 108, .9)") n
+
+                                .work-item(style="background-image:url(img/works/cre8uk-s.jpg")
+                                    a(href="http://cre8uk.co", target="_blank")
+                                        span cre8uk.co
+                                        .color(style="background: rgba(20, 73, 144, .2)")
+                                        strong(style="color: rgba(20, 73, 144, .9)") c
+                                .work-item(style="background-image:url(img/works/huydong.jpg")
+                                    a(href="https://huydong.com", target="_blank")
+                                        span huydong.com
+                                        .color(style="background: rgba(139, 146, 111, .2)")
+                                        strong(style="color: rgba(139, 146, 111, .9)") h
+
+                                .work-item(style="background-image:url(img/works/geo.jpg")
+                                    a(href="http://geo.sa", target="_blank")
+                                        span geo.sa
+                                        .color(style="background: rgba(245, 86, 31, .2)")
+                                        strong(style="color: rgba(245, 86, 31, .9)") g
+                                
+
+                                .work-item(style="background-image:url(img/works/wood.jpg")
+                                    a(href="http://www.biertonandwoods.co.uk/", target="_blank")
+                                        span biertonandwoods.co.uk
+                                        .color(style="background: rgba(80, 82, 87, .2)")
+                                        strong(style="color: rgba(80, 82, 87, .9)") b
+
+                                .work-item(style="background-image:url(img/works/guitar.jpg")
+                                    a(href="http://www.totallyguitars.com", target="_blank")
+                                        span totallyguitars.com
+                                        .color(style="background: rgba(111, 48, 74, .2)")
+                                        strong(style="color: rgba(111, 48, 74, .9)") t
+
+                                
+                                
+
+                                .work-item(style="background-image:url(img/works/brain.jpg")
+                                    a(href="http://www.brainbullet.com", target="_blank")
+                                        span brainbullet
+                                        .color(style="background: rgba(255, 174, 0, .2)")
+                                        strong(style="color: rgba(255, 174, 0, .9)") b
+
+                            
+                    .footer.footer
+                        .footer_top
+                            .container 
+                        
+                        .footer_bottom
+                            .container 
+                                ul 
+                                    li: a(href="#top", title="title") Home
+                                    li: a(href="#about", title="title") About
+                                    li: a(href="#works", title="title") Works
+
+                                        
+                                .avatar
+                                    span Tan
+                                p ©2017
+                                    
+
+                    //- end footer
+                //- end wrap_home
+                .wrap_contact
+                   .contact
+                        .contact_top
+                            .btnBack
+                                span
+                            .avatar
+                                span Tan
+
+                        .contact_main
+                            .add 
+                                ul
+                                    li
+                                        span.icon-mail
+                                        a(href="mailto:daoduytan2212@gmail.com") daoduytan2212@gmail.com
+                                    li
+                                        span.icon-skype
+                                        a(href="skype:daoduytan2212?chat") daoduytan2212
+                                    li
+                                        span.icon-phone
+                                        a(href="tel:+84969 811 549") 0969 811 549
+                //- end wrap_contact
+            //- end wrap_inner
+        //- wrap
+    //- end body
+    
+    //- load js
+    <script src="js/jquery.min.js"></script>
+    script(src="js/wow.min.js")
+    script(src="js/TweenMax.min.js")
+    script(src="js/ScrollToPlugin.min.js")
+    script(src="js/slick.min.js")
+    script(src="js/main.js")
