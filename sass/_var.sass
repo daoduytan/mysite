@@ -47,14 +47,14 @@ $color-3: #19e085
 
 
     ul 
-        border-right: 1px solid #f5f5f5
+        border-right: 1px solid #f3f3f3
         list-style: none
         padding: 0
         margin: 0
         +size(100% 100%)
         li 
             +size(14.2857% 100%)
-            border-left: 1px solid #f5f5f5
+            border-left: 1px solid #f3f3f3
             float: left
             // background: rgba(#ddd, .3)
 
@@ -122,7 +122,7 @@ a
     height: 50px
     min-width: 150px;
     line-height: 50px
-    background: $color-1
+    background-color: $color-1
     color: #fff
     text-align: center
     padding:
@@ -144,7 +144,8 @@ a
         +position(absolute, 0 null null 0)
         background: $color_2
         transform: translateX(-100%)
-        transition: all .15s ease-in-out
+        transition: all .3s ease-in-out
+
     &:hover 
         &:before
             transform: translateX(0%)
@@ -154,12 +155,13 @@ a
     min-height: 100vh
 
     &_title 
+        padding: 50px 0 0
         h3 
             display: block
             text-transform: uppercase
             margin: 0 0 30px
             font:
-                weight: 300
+                weight: 900
                 size: 35px
 
         &:after 
@@ -170,7 +172,7 @@ a
             background: url(../img/icon.png) no-repeat 50% 50%
 
 .down 
-    padding: 100px 0
+    padding: 100px 0 50px
     position: relative
     z-index: 10
     img 

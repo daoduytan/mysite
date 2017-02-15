@@ -19,7 +19,7 @@ $(window).on('load', function(event) {
             $('.loading').css({
                 'opacity': '0',
                 'visibility': 'hidden',
-                'transform': 'translateY(-100%)'
+                'transform': 'translateY(-100%) scale(.5)'
             });
         }, 500);
     }
@@ -40,10 +40,6 @@ $(window).on('load', function(event) {
         enableSmoothScroll(.5, 100);
         smoothScroll(.5, 100);
     }
-
-
-    
-
 
     $(document).ready(function() {
         var $vH = $(window).outerHeight();
@@ -115,7 +111,7 @@ $(window).on('load', function(event) {
             $('.text_1').css('margin-top', -x / 10 + '%');
             $('.text_2').css('margin-top', -x / 12 + '%');
 
-            if (x > $('.about ').offset().top) {
+            if ( x > $('.about ').offset().top) {
                 $('.about_skill ul li').each(function(index, el) {
                     var $this = $(this),
                         skillBar = $this.find('.skill_bar'),
@@ -128,15 +124,19 @@ $(window).on('load', function(event) {
                 });
             }
 
-
             closeHeader();
         });
 
         $('.allWorks_slider').owlCarousel({
             loop:true,
+            dots: false,
             autoplay: true,
             autoplayHoverPause: true,
-            // nav:true,
+            nav:true,
+            mouseDrag: false,
+            smartSpeed: 700,
+            autoplaySpeed: 700,
+            navSpeed:700,
             margin:0,
             responsive:{
                 0:{
@@ -154,8 +154,9 @@ $(window).on('load', function(event) {
             }
         });
 
-
     });
+
+    // function
 
     function playAdio() {
         var audio = $('#menuSound')[0];
@@ -182,8 +183,6 @@ $(window).on('load', function(event) {
                     scrollTop: target.offset().top - heightHeader
                 }, duration);
             }
-
-
 
             closeHeader();
         });
@@ -214,11 +213,8 @@ $(window).on('load', function(event) {
     }
 
     function enableSmoothScroll(time, distance) {
-
         $(window).on('mousewheel.smooth DOMMouseScroll.smooth', smoothScroll(time, distance));
-
     }
-
     
 
 })(jQuery);

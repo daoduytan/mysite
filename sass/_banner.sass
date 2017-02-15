@@ -6,7 +6,7 @@
     min-height: 100vh
     // background: url(../img/bg.jpg) no-repeat 
     // background:
-    //     size: cover
+    //     size: 100% 100%
 
     .container
         position: relative
@@ -21,7 +21,6 @@
         transform: rotate(90deg)
         line-height: 1
         opacity: .95
-        // transition: margin .1s ease
 
         span 
             display: inline-block
@@ -85,24 +84,33 @@
 
         li 
             display: inline-block
+            height: 50px
 
             a 
                 color: #212121
                 font-size: 25px
+                display: inline-block
+                transition: all .2s ease
+                transform-origin: 50% 50%
+
+            &:hover a
+                transform: translateY(-5px) scale(1.2)
 
 
 .about
-    
+    padding-top: 50px
     &_inner
         width: 80%
         padding: 50px 30px
         margin: auto
-        background: #fff url(../img/bgAbout.jpg) no-repeat top left
+        // background: #fff url(../img/bgAbout.jpg) no-repeat top left
+        background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%)
         background:
             size: cover
             attachment: fixed
         // box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.2)
-        box-shadow: 0px 20px 50px 0px rgba(54, 67, 77, 0.2);
+        // box-shadow: 0px 20px 50px 0px rgba(54, 67, 77, 0.2)
+        box-shadow: 0px 57px 34px -40px rgba(0, 0, 0, 0.1), 0px 3px 40px 2px rgba(0, 0, 0, 0.2)
         position: relative
         
         .cirle
@@ -202,13 +210,31 @@
     margin: 200px auto
     position: relative
 
+    .text-center 
+        background: rgba($color-3,.9)
+        box-shadow: 0px 5px 20px rgba(0,0,0,.1)
+        display: inline-block
+        padding: 15px
+        color: $color-2
+        text-transform: uppercase
+        letter-spacing: 3px
+        position: absolute
+        bottom: 30px
+        font:
+            size: 10px
+            weight: 600
+
+
     .mockup 
         width: 100%
-        box-shadow: 0 0 40px rgba(54,67,77,0.2)
+        // box-shadow: 0 0 40px rgba(54,67,77,0.2)
+        box-shadow: 0px 57px 34px -40px rgba(0, 0, 0, 0.1), 0px 3px 40px 2px rgba(0, 0, 0, 0.2)
         background-size: cover
         background-position: top center
         transition: all .3s cubic-bezier(0, 0, 0.1, 1.48)
         position: relative
+
+
 
         span 
             display: block
@@ -227,7 +253,8 @@
 
     &:hover 
         .mockup 
-            box-shadow: 0 20px 50px rgba(54,67,77,0.5)
+            // box-shadow: 0 20px 50px rgba(54,67,77,0.5)
+            box-shadow: 0px 80px 110px -40px rgba(86, 119, 119, 0.68), 0px 5px 20px rgba(0, 0, 0, 0.1);
             transform: translate(0, -50px)!important
             transition: all .3s cubic-bezier(0, 0, 0.1, 1.48)
 
@@ -236,8 +263,8 @@
     
     .namWork 
         font-weight: 700
-        text-transform: uppercase
-        font-size: 35px
+        text-transform: lowercase
+        font-size: 40px
         position: absolute
         left: -150px
         top: 0
@@ -254,10 +281,9 @@
     .letter 
         right: -50%
         bottom: -100px
-        
         line-height: 1
         text-shadow: 0px 20px 30px rgba(0,0,0,.2)
-        transform-origin: center left !important
+        transform-origin: 50% 50% !important
         text-transform: uppercase
         font-size: 500px
         position: absolute
@@ -270,47 +296,59 @@
     .letter 
         right: inherit
         left: -50%
-        transform-origin: center right !important
+        transform-origin: 50% 50% !important
         
 
     .namWork 
         left: inherit
         right: -150px
 
+    .text-center 
+        right: 0
 
-// .works > .work:nth-child(1)
-//         .letter 
-//             bottom: -2500px
-// .works > .work:nth-child(2)
-//         .letter 
-//             bottom: -3150px
 
-// .works > .work:nth-child(3)
-//         .letter 
-//             bottom: -3750px
-
-// .works > .work:nth-child(4)
-//         .letter 
-//             bottom: -4500px
-
-// .works > .work:nth-child(5)
-//         .letter 
-//             bottom: -5150px
 
 .allWorks 
     background: #f4f4f4
     padding: 0 15px
 
-    .slick-arrow 
+    .owl-prev, .owl-next 
         position: absolute
         top: 50%
-        z-index: 999
+        margin-top: -40px
+        +size(40px 80px)
+        background-color: rgba(#fff, .8)
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: 100%
+        text-indent: -99999px
+        overflow: hidden
+        transition: all .3s ease-in-out
 
-    .slick-list
+        &:hover 
+            background-color: rgba($color-1, .9)
+    
+    .owl-prev 
+        left: -15px
+        background-image: url(../img/arrow_l.svg) 
+        box-shadow: 5px 0px 10px rgba(0,0,0,.2)
+        transform: translateX(-100%)
+        
+    .owl-next
+        right: -15px
+        background-image: url(../img/arrow_r.svg) 
+        box-shadow: -5px 0px 10px rgba(0,0,0,.2)
+        transform: translateX(100%)
+
+    &:hover 
+        .owl-prev, .owl-next 
+            transform: translateX(0%)
+
+    .owl-stage-outer 
         overflow: inherit
 
-    .slick-next
-        right: 0
+    .owl-stage
+        transition: all 1s ease-in-out
 
     .work-item
         background-size: cover
@@ -351,25 +389,26 @@
             transform: translateY(-100px)
             transition: all .3s ease-in-out
 
-        &.slick-active 
-            .color 
-                min-height: 100%
+    .owl-item.active
+        .color 
+            min-height: 100%
+
+        span 
+            opacity: 1
+            bottom: 100px
+
+        strong 
+            transform: translateY(0px)
+
+        &:hover 
+            strong 
+                text-shadow: 0px 20px 30px rgba(0,0,0,.3)
+                transform: translateY(-30px)
 
             span 
-                opacity: 1
-                bottom: 100px
+                text-shadow: 0px 10px 20px rgba(0,0,0,.3)
+                transform: translateY(-30px)
 
-            strong 
-                transform: translateY(0px)
-
-            &:hover 
-                strong 
-                    text-shadow: 0px 20px 30px rgba(0,0,0,.3)
-                    transform: translateY(-30px)
-
-                span 
-                    text-shadow: 0px 10px 20px rgba(0,0,0,.3)
-                    transform: translateY(-30px)
 
 // contact 
 .contact
@@ -444,7 +483,6 @@
 
 .showContact .btnBack span::after 
     transform: rotate(-45deg)
-
        
         
 
