@@ -54,9 +54,12 @@ $(window).on('load', function(event) {
             /* Act on the event */
             var $this = $(this);
 
-            $this.toggleClass('toggle');
-            $('.header_top').toggleClass('show');
-
+            $('body').animate({
+                scrollTop: 0},
+                300, function() {
+                $this.toggleClass('toggle');
+                $('.header_top').toggleClass('show');
+            });
             playAdio()
         });
 
