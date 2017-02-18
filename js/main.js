@@ -37,8 +37,10 @@ $(window).on('load', function(event) {
     var x =  $(window).width();
 
     if(x >= 1024) {
-        enableSmoothScroll(.5, 100);
-        smoothScroll(.5, 100);
+        // enableSmoothScroll(.5, 100);
+        // smoothScroll(.5, 100);
+
+        smoothScroll(.8, 300);
     }
 
     $(document).ready(function() {
@@ -56,10 +58,11 @@ $(window).on('load', function(event) {
 
             $('body').animate({
                 scrollTop: 0},
-                300, function() {
+                100, function() {
                 $this.toggleClass('toggle');
                 $('.header_top').toggleClass('show');
             });
+
             playAdio()
         });
 
@@ -127,7 +130,9 @@ $(window).on('load', function(event) {
                 });
             }
 
+            
             closeHeader();
+            
         });
 
         $('.allWorks_slider').owlCarousel({
