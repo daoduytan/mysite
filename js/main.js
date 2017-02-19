@@ -1,32 +1,45 @@
 $(window).on('load', function(event) {
     var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
 
-    if (loadTime >= 500) {
+    if (loadTime >= 2000) {
 
         LoadBar(loadTime)
 
         setTimeout(function() {
             $('.loading').css({
                 'opacity': '0',
+                // 'transform': 'translateY(-100%)',
                 'visibility': 'hidden'
             });
+
+            $('#Sound')[0].play();
+
         }, loadTime);
 
+        
+
     } else {
-        LoadBar(500)
+        LoadBar(1500)
 
         setTimeout(function() {
+            
             $('.loading').css({
                 'opacity': '0',
-                'visibility': 'hidden',
-                'transform': 'translateY(-100%) scale(.5)'
+                'visibility': 'hidden'
             });
-        }, 500);
+
+            $('#Sound')[0].play();
+
+        }, 2000);
     }
 
     function LoadBar(time) {
-        $('.load_bar').find('span').animate({
+        $('.load_bar').find('span').delay( 600 ).animate({
             'width': '250px'
+        }, time);
+
+        $('.h3 span').delay( 500 ).animate({
+            'width': '100%'
         }, time);
     }
 });
@@ -50,7 +63,7 @@ $(window).on('load', function(event) {
             new WOW().init();
         }, 600);
 
-        smoothClickScroll(500);
+        smoothClickScroll(1000);
 
         $('.header_icon').on('click', function(event) {
             /* Act on the event */
@@ -84,7 +97,8 @@ $(window).on('load', function(event) {
 
         $('.works > .work').each(function(index, el) {
             var $this = $(this),
-                $h = ($this.find('.mockup').outerHeight()) / 2;
+                $h = ($this.find('.mockup').outerHeight()) / 2,
+                $wDoc = $(window).width();
 
             $(window).scroll(function() {
                 var x = $(window).scrollTop();
@@ -94,16 +108,17 @@ $(window).on('load', function(event) {
                         $top = $this.offset().top,
                         y = (x - $top + $h) / $vH;
 
+
                     $this.find('.letter').css({
                         transform: 'translateY(' + (1 - (x - $top) - 100) + 'px) scale(' + (1 - y / 2) + ')'
                     });
-
 
                     $this.find('.mockup').css({
                         transform: 'scale(' + (1 - y / 3) + ')'
                     });
                 });
             });
+
         });
 
 
@@ -166,6 +181,11 @@ $(window).on('load', function(event) {
 
     // function
 
+    function playAdio($id) {
+        var audio = $($id)[0];
+        audio.play();
+    }
+
     function playAdio() {
         var audio = $('#menuSound')[0];
         audio.play();
@@ -178,7 +198,7 @@ $(window).on('load', function(event) {
     }
 
 
-    function smoothClickScroll(duration) {
+    function smoothClickScroll($time) {
         $('a[href^="#"]').on('click', function(event) {
 
             var $this = $(this);
@@ -189,7 +209,7 @@ $(window).on('load', function(event) {
                 event.preventDefault();
                 $('html, body').animate({
                     scrollTop: target.offset().top - heightHeader
-                }, duration);
+                }, $time);
             }
 
             closeHeader();
@@ -202,6 +222,7 @@ $(window).on('load', function(event) {
         var $window = $(window);
         var scrollTime = time;
         var scrollDistance = distance;
+
 
         $window.on("mousewheel.smooth DOMMouseScroll.smooth", function(event) {
 

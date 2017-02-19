@@ -1,37 +1,78 @@
 .loading 
 	position: fixed
 	+size(100% 100%)
-	background: #212121
+	background: $color-2
 	z-index: 10000
-	transition: all .3s ease-in-out
+	transition: all 1s ease-in-out
+
+	.h3
+		display: inline-block
+		font:
+			size: 200px
+			weight: 800
+		text-transform: uppercase
+		position: relative
+		z-index: 9999
+		text-shadow: 0px 0px 10px rgba(0,0,0,.3)
+		margin: 0
+		color: rgba(#444, 1)
+
+		strong 
+			display: inline-block
+			transform: translateX(0%) 
+			opacity: 1
+			animation: loadText 1s ease .15s 
+			transform-origin: bottom right
+
+		strong + strong
+			animation-delay: .1s
+
+		strong + strong + strong
+			animation-delay: .05s
+			
+		span
+			position: absolute
+			top: 0 
+			left: 0
+			content: "tan"
+			text-transform: uppercase
+			color: rgba($color-3, 1)
+			display: inline-block
+			width: 0
+			overflow: hidden
 
 	.line
 		ul 
-			border-color: #2f2f2f
+			border-color: #3e3e3e
 			li 
 				background: transparent
-				border-color: #2f2f2f
+				border-color: #3e3e3e
 
 
 .load
 	+position(absolute, 50% null null 50%)
 	transform: translate(-50%, -50%)
 	z-index: 999
+	width: 100%
+	text-align: center
 
-	.avatar 
-		+size(200px 200px)
+@keyframes loadWidth 
+	0%
+		width: 0%
+	100%
+		width: 100%
 
-		font-size: 70px
+@keyframes loadText
+	0%
+		transform: translateX(-300%) skew(0deg)
+		opacity: 0
 
-	&_bar 
-		+size(250px 5px)
-		background: #fff
-		margin: 50px auto
-		position: relative
+	50%
+		transform: skew(-10deg)
 
-		span
-			display: block
-			position(absolute, 0 null null 0)
-			+size(0 100%)
-			background: $color_1
+	75%
+		transform: skew(3deg)
 
+	100%
+		transform : translateX(0) skew(0deg)
+		opacity: 1
