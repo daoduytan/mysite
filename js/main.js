@@ -12,7 +12,7 @@ $(window).on('load', function(event) {
                 'visibility': 'hidden'
             });
 
-            $('#Sound')[0].play();
+            // $('#Sound')[0].play();
 
         }, loadTime);
 
@@ -28,7 +28,7 @@ $(window).on('load', function(event) {
                 'visibility': 'hidden'
             });
 
-            $('#Sound')[0].play();
+            // $('#Sound')[0].play();
 
         }, 2000);
     }
@@ -115,7 +115,7 @@ $(window).on('load', function(event) {
                     });
 
                     $this.find('.mockup').css({
-                        transform: 'scale(' + (1 - y / 3) + ')'
+                        transform: 'scale(' + (1 - y / 8) + ')'
                     });
                 });
             });
