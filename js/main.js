@@ -53,8 +53,8 @@ $(window).on('load', function(event) {
         // enableSmoothScroll(.5, 100);
         // smoothScroll(.5, 100);
 
-        enableSmoothScroll(.8, 300);
-        smoothScroll(.8, 300);
+        // enableSmoothScroll(.8, 300);
+        // smoothScroll(.8, 300);
     }
 
     $(document).ready(function() {
@@ -218,33 +218,33 @@ $(window).on('load', function(event) {
     }
 
 
-    function smoothScroll(time, distance) {
+    // function smoothScroll(time, distance) {
 
-        var $window = $(window);
-        var scrollTime = time;
-        var scrollDistance = distance;
+    //     var $window = $(window);
+    //     var scrollTime = time;
+    //     var scrollDistance = distance;
 
 
-        $window.on("mousewheel.smooth DOMMouseScroll.smooth", function(event) {
+    //     $window.on("mousewheel.smooth DOMMouseScroll.smooth", function(event) {
 
-            event.preventDefault();
-            var delta = event.originalEvent.wheelDelta / 80 || -event.originalEvent.detail / 3;
-            var scrollTop = $window.scrollTop();
-            var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+    //         event.preventDefault();
+    //         var delta = event.originalEvent.wheelDelta / 80 || -event.originalEvent.detail / 3;
+    //         var scrollTop = $window.scrollTop();
+    //         var finalScroll = scrollTop - parseInt(delta * scrollDistance);
 
-            TweenMax.to($window, scrollTime, {
-                scrollTo: { y: finalScroll, autoKill: true },
-                ease: Power1.easeOut,
-                overwrite: 5
-            });
+    //         TweenMax.to($window, scrollTime, {
+    //             scrollTo: { y: finalScroll, autoKill: true },
+    //             ease: Power1.easeOut,
+    //             overwrite: 5
+    //         });
 
-        });
+    //     });
 
-    }
+    // }
 
-    function enableSmoothScroll(time, distance) {
-        $(window).on('mousewheel.smooth DOMMouseScroll.smooth', smoothScroll(time, distance));
-    }
+    // function enableSmoothScroll(time, distance) {
+    //     $(window).on('mousewheel.smooth DOMMouseScroll.smooth', smoothScroll(time, distance));
+    // }
     
 
 })(jQuery);

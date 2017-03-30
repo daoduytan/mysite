@@ -3935,8 +3935,11 @@ a {
   left: inherit;
   right: -150px; }
 
+.works > div:nth-child(2n+1) .text-center {
+  left: -15px; }
+
 .works > div:nth-child(2n) .text-center {
-  right: 0; }
+  right: -15px; }
 
 .allWorks {
   background: #f4f4f4;
