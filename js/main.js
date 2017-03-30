@@ -53,6 +53,7 @@ $(window).on('load', function(event) {
         // enableSmoothScroll(.5, 100);
         // smoothScroll(.5, 100);
 
+        enableSmoothScroll(.8, 300);
         smoothScroll(.8, 300);
     }
 
